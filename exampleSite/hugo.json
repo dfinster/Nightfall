@@ -1,0 +1,96 @@
+{
+  "baseURL": "http://localhost:1313/",
+  "title": "Nightfall",
+  "languageCode": "en",
+  "theme": [
+    "nightfall",
+    "theme-blank"
+  ],
+  "pagination": {
+    "pagerSize": 5
+  },
+  "params": {
+    "author": {
+      "name": "A night owl",
+      "username": "example"
+    },
+    "description": "Notes on the everyday. A few photographs. The occasional longer thought."
+  },
+  "menus": {
+    "main": [
+      {
+        "name": "Archive",
+        "url": "/archive/",
+        "weight": 1
+      },
+      {
+        "name": "Photos",
+        "url": "/photos/",
+        "weight": 2
+      },
+      {
+        "name": "Categories",
+        "url": "/categories/",
+        "weight": 3
+      },
+      {
+        "name": "About",
+        "url": "/about/",
+        "weight": 4
+      }
+    ]
+  },
+  "taxonomies": {
+    "category": "categories"
+  },
+  "outputFormats": {
+    "ArchiveHTML": {
+      "mediaType": "text/html",
+      "path": "archive",
+      "baseName": "index",
+      "isHTML": true,
+      "notAlternative": true
+    },
+    "PhotosHTML": {
+      "mediaType": "text/html",
+      "path": "photos",
+      "baseName": "index",
+      "isHTML": true,
+      "notAlternative": true
+    },
+    "RSS": {
+      "baseName": "feed"
+    },
+    "JSON": {
+      "baseName": "feed"
+    }
+  },
+  "outputs": {
+    "home": [
+      "HTML",
+      "RSS",
+      "JSON",
+      "ArchiveHTML",
+      "PhotosHTML"
+    ],
+    "section": [
+      "HTML"
+    ],
+    "taxonomy": [
+      "HTML"
+    ],
+    "term": [
+      "HTML"
+    ]
+  },
+  "markup": {
+    "goldmark": {
+      "extensions": {
+        "footnote": true
+      },
+      "renderer": {
+        "unsafe": true
+      }
+    }
+  }
+}

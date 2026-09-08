@@ -1,0 +1,3 @@
+{{- $prefix := .page.RelPermalink | md5 -}}
+{{- $replacement := printf `${1}="${2}nf-%s-${3}"` $prefix -}}
+{{- .html | replaceRE `(id|href)="(#?)(fn[^" ]*)"` $replacement | safeHTML -}}

@@ -1,0 +1,9 @@
+<article class="post h-entry">
+<div class="post-meta"><a class="u-url" href="{{ .page.Permalink }}"><time class="dt-published" datetime="{{ .page.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .page.Date.Format "Jan 2, 2006" }}</time></a>
+{{ if and .page.Title (ge .page.WordCount 400) }}<span class="reading-time">{{ .page.ReadingTime }} min read</span>{{ end }}</div>
+{{ if .page.Title }}{{ if .single }}<h1 class="p-name">{{ .page.Title }}</h1>{{ else }}<h2 class="p-name"><a href="{{ .page.Permalink }}">{{ .page.Title }}</a></h2>{{ end }}{{ end }}
+{{ with .page.Params.reply_to_url }}<p>In reply to <a class="u-in-reply-to" href="{{ . }}">{{ $.page.Params.reply_to_hostname | default . }}</a></p>{{ end }}
+<div class="e-content">{{ if and (not .single) (in .page.RawContent "<!--more-->") }}{{ partial "content.html" (dict "page" .page "html" .page.Summary) }}<p><a href="{{ .page.Permalink }}">Continue reading<span class="sr-only">{{ with .page.Title }}: {{ . }}{{ end }}</span></a></p>{{ else }}{{ partial "content.html" (dict "page" .page "html" .page.Content) }}{{ end }}</div>
+{{ with .page.GetTerms "categories" }}<nav class="categories" aria-label="Post categories">{{ range . }}<a class="p-category" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}</nav>{{ end }}
+{{ with .page.Site.Params.author.name }}<span class="p-author h-card sr-only">{{ . }}</span>{{ end }}
+</article>

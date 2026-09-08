@@ -1,0 +1,11 @@
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark"><meta name="theme-color" content="#111716">
+<title>{{ if and .Title (not .IsHome) }}{{ .Title }} · {{ end }}{{ .Site.Title }}</title>
+<meta name="description" content="{{ if .IsPage }}{{ .Summary | plainify | htmlUnescape | truncate 160 }}{{ else }}{{ .Site.Params.description | plainify | htmlUnescape | truncate 160 }}{{ end }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<meta property="og:title" content="{{ .Title | default .Site.Title }}"><meta property="og:url" content="{{ .Permalink }}"><meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<link rel="stylesheet" href="{{ "css/nightfall.css" | relURL }}?{{ .Site.Params.theme_seconds }}">
+{{ partial "microblog_head.html" . }}
+</head>

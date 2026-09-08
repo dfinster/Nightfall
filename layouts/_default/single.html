@@ -1,0 +1,4 @@
+{{ define "main" }}{{ if or (eq .Type "post") (eq .Type "reply") }}
+{{ partial "post.html" (dict "page" . "single" true) }}
+{{ if .Params.include_conversation }}<section id="conversation"><h2>Conversation</h2><script src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script></section>{{ end }}
+{{ else }}<article class="post"><h1>{{ .Title }}</h1><div class="e-content">{{ .Content }}</div></article>{{ end }}{{ end }}

@@ -1,0 +1,6 @@
+{{ $provider := .Get "provider" | default "file" }}{{ $id := .Get "id" }}{{ $title := .Get "title" | default "Video" }}
+<figure>
+{{ if eq $provider "youtube" }}<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/{{ $id }}" title="{{ $title }}" loading="lazy" allow="fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe></div><figcaption><a href="https://www.youtube.com/watch?v={{ $id }}">Watch {{ $title }} on YouTube</a></figcaption>
+{{ else if eq $provider "vimeo" }}<div class="video-embed"><iframe src="https://player.vimeo.com/video/{{ $id }}?dnt=1" title="{{ $title }}" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe></div><figcaption><a href="https://vimeo.com/{{ $id }}">Watch {{ $title }} on Vimeo</a></figcaption>
+{{ else }}<video controls playsinline preload="metadata" aria-label="{{ $title }}"{{ with .Get "poster" }} poster="{{ . }}"{{ end }} src="{{ .Get "src" }}">Your browser cannot play this video.</video><figcaption><a href="{{ .Get "src" }}">Open {{ $title }}</a></figcaption>{{ end }}
+{{ with .Get "caption" }}<figcaption>{{ . }}</figcaption>{{ end }}</figure>

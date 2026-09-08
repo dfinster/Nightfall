@@ -1,0 +1,4 @@
+name = "Nightfall"
+license = "MIT"
+description = "A quiet dark theme for Micro.blog with footnotes and responsive video."
+min_version = "0.147.9"

@@ -1,0 +1,12 @@
+{
+  "markup": {
+    "goldmark": {
+      "extensions": {
+        "footnote": true
+      },
+      "renderer": {
+        "unsafe": true
+      }
+    }
+  }
+}

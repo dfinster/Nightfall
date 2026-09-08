@@ -1,0 +1,1 @@
+{{ define "main" }}<h1>{{ .Title }}</h1><ul class="archive-list">{{ range .Data.Terms.Alphabetical }}<li><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a> <span class="post-meta">{{ .Count }} posts</span></li>{{ else }}<li>No categories yet.</li>{{ end }}</ul>{{ end }}

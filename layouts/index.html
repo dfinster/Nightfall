@@ -1,0 +1,5 @@
+{{ define "main" }}<p class="eyebrow">The journal</p><div class="h-feed">
+{{ $pages := where .Site.RegularPages "Type" "post" }}
+{{ $pager := .Paginate $pages.ByDate.Reverse }}
+{{ range $pager.Pages }}{{ partial "post.html" (dict "page" . "single" false) }}{{ else }}<p class="empty">The journal is waiting for its first post.</p>{{ end }}</div>
+{{ partial "pagination.html" . }}{{ end }}

@@ -1,6 +1,6 @@
 # Nightfall for Micro.blog
 
-A dark, typography-led journal theme: charcoal, warm white, and mint. Desktop side navigation becomes a compact header on phones. Uses system fonts and a small optional script; no theme framework or externally hosted font dependency.
+A dark, typography-led journal theme: charcoal and soft light blue with sans-serif text. Desktop side navigation becomes a compact header on phones. Uses system fonts and a small optional script; no theme framework or externally hosted font dependency.
 
 ## Included
 
@@ -13,12 +13,16 @@ A dark, typography-led journal theme: charcoal, warm white, and mint. Desktop si
 
 ## Install on Micro.blog
 
-1. In Micro.blog, open **Design → Edit Custom Themes → New Plug-in**. Enter Nightfall as the title and your repository’s clone URL. Choose the intended blog and add the plug-in. Interface labels may vary.
-2. Uninstall the previous visual theme plug-in so its templates do not compete. If your dashboard offers a base design selector, choose **Blank**. Keep Micro.blog’s underlying shared Blank templates; Nightfall inherits its feeds, discovery metadata, and custom-footer partial.
-3. Use a current Hugo version offered by Micro.blog. Local validation used Hugo **0.147.9**; older versions have not been validated.
-4. Add/reorder navigation in Micro.blog’s Pages area. Add Archive and Photos using its built-in pages; a Categories navigation link can point to `/categories/`. Nightfall renders these pages; it does not add navigation items in your account automatically.
-5. Rebuild the blog and check a post, `/archive/`, `/photos/`, and both feeds. A Micro.blog test blog is useful for checking your content and installed plug-ins first.
+This ZIP contains theme source, not a blog-content import. Your live blog has not been modified.
 
+1. Unzip the download. Create a GitHub repository and put the **contents of `nightfall/`** at its root (`layouts/`, `static/`, `config.json`, and `theme.toml` must be at repository root). The `exampleSite/` directory is only for local previews.
+2. In Micro.blog, open **Design → Edit Custom Themes → New Plug-in**. Enter Nightfall as the title and your repository’s clone URL. Choose the intended blog and add the plug-in. Interface labels may vary.
+3. Uninstall the previous visual theme plug-in so its templates do not compete. If your dashboard offers a base design selector, choose **Blank**. Keep Micro.blog’s underlying shared Blank templates; Nightfall inherits its feeds, discovery metadata, and custom-footer partial.
+4. Use a current Hugo version offered by Micro.blog. Local validation used Hugo **0.147.9**; older versions have not been validated.
+5. Add/reorder navigation in Micro.blog’s Pages area. Add Archive and Photos using its built-in pages; a Categories navigation link can point to `/categories/`. Nightfall renders these pages; it does not add navigation items in your account automatically.
+6. Rebuild the blog and check a post, `/archive/`, `/photos/`, and both feeds. A Micro.blog test blog is useful for checking your content and installed plug-ins first.
+
+A no-GitHub alternative is to create a custom theme and add each `layouts/` and `static/` file with exactly its relative path, plus `config.json`. Select that custom theme over Blank. Do not paste these templates into Edit CSS.
 
 ## Footnotes
 
@@ -63,14 +67,14 @@ In **Design → Edit CSS**, override the tokens:
 :root {
   --bg: #111716;
   --surface: #1a2321;
-  --ink: #eceee7;
-  --muted: #a7b4ae;
-  --accent: #a6e3c0;
+  --ink: #b6ccdf;
+  --muted: #91a9bd;
+  --accent: #97bfe1;
   --width: 720px;
 }
 ```
 
-Site title, description, menu links, custom footer, and author details come from your Micro.blog settings. Conversations follow each post’s `include_conversation` setting. Theme CSS does not style the contents of third-party iframes. Pagination follows Hugo’s configured page size.
+Your Micro.blog profile picture appears above the site title on desktop and beside it on phones, using `Site.Params.author.avatar`. If no avatar is configured, the title appears on its own. Set your profile picture in Micro.blog before rebuilding. Site title, description, menu links, custom footer, and author details come from your Micro.blog settings. Conversations follow each post’s `include_conversation` setting. Theme CSS does not style the contents of third-party iframes. Pagination follows Hugo’s configured page size.
 
 For an inline photo gallery:
 

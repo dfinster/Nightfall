@@ -1,5 +1,5 @@
 <header class="site-header h-card">
-<a class="brand p-name u-url" href="{{ "/" | relURL }}"><span class="brand-mark" aria-hidden="true">☾</span>{{ .Site.Title }}</a>
+<a class="brand p-name u-url" href="{{ "/" | relURL }}">{{ with .Site.Params.author.avatar }}<img class="profile-avatar u-photo" src="{{ . }}" alt="" width="80" height="80">{{ end }}{{ .Site.Title }}</a>
 {{ with .Site.Params.description }}<div class="description p-note">{{ . | safeHTML }}</div>{{ end }}
 <nav class="site-nav" aria-label="Main navigation">
 <a href="{{ "/" | relURL }}"{{ if .IsHome }} aria-current="page"{{ end }}>Journal</a>

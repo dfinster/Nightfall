@@ -1,5 +1,5 @@
 <footer class="site-footer">
-<p>© {{ now.Format "2006" }} {{ .Site.Params.author.name | default .Site.Title }} · <a href="https://micro.blog/">Micro.blog</a></p>
+<p>© {{ now.Format "2006" }} {{ .Site.Params.author.name | default .Site.Title }}</p>
 <p><a href="{{ "feed.xml" | relURL }}">RSS</a> · <a href="{{ "feed.json" | relURL }}">JSON Feed</a>{{ with .Site.Params.author.username }} · <a rel="me" href="https://micro.blog/{{ . }}">Follow on Micro.blog</a>{{ end }}</p>
 {{ partial "custom_footer.html" . }}
 </footer>

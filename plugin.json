@@ -1,0 +1,19 @@
+{
+  "version": "1.1.1",
+  "title": "Nightfall",
+  "description": "A dark Micro.blog theme with soft blue text, footnotes, and responsive video.",
+  "fields": [
+    {
+      "field": "params.description",
+      "label": "Site description",
+      "type": "string",
+      "placeholder": "Enter the description shown below your site title"
+    },
+    {
+      "field": "params.author.avatar",
+      "label": "Profile picture URL",
+      "type": "string",
+      "placeholder": "Enter the full URL of your profile picture"
+    }
+  ]
+}

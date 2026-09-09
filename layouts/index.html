@@ -1,4 +1,4 @@
-{{ define "main" }}<p class="eyebrow">Posts</p><div class="h-feed">
+{{ define "main" }}<div class="h-feed">
 {{ $pages := where .Site.RegularPages "Type" "post" }}
 {{ $pager := .Paginate $pages.ByDate.Reverse }}
 {{ range $pager.Pages }}{{ partial "post.html" (dict "page" . "single" false) }}{{ else }}<p class="empty"></p>{{ end }}</div>

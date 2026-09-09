@@ -112,9 +112,13 @@ button {
   font-size: .85rem;
 }
 
-.site-nav a:hover,
+.site-nav a:hover {
+  color: var(--accent);
+}
+
 .site-nav a[aria-current="page"] {
   color: var(--accent);
+  font-weight: 700;
 }
 
 .site-main {
